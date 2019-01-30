@@ -4,6 +4,7 @@ namespace Hcode\model;
 
 use \Hcode\DB\Sql;
 use \Hcode\model;
+use \Hcode\Mailer;
 
 class User extends model {
 
@@ -167,7 +168,7 @@ class User extends model {
         else {
 
         $dataRecovery = $results2[0];
-
+        
         $code = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, User::SECRET, $dataRecovery["idrecovery"], MCRYPT_MODE_ECB));
 
         $link = "http://www.hcodecommerce.com.br/admin/forgot/reset?code=$code";
