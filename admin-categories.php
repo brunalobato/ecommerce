@@ -98,7 +98,7 @@ $app->get("/categories/:idcategory", function($idcategory){
 
 		$category->get((int)$idcategory);
 
-		$page = new Page();
+		$page = new PageAdmin();
 
 		$page->setTpl("category", [
 
