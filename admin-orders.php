@@ -53,7 +53,7 @@ $app->get("/admin/orders/:idorder/delete", function($idorder){
     Order::setSuccess("Status atualizado");
 
     header("Location: /admin/orders/". $idorder. "/status");
-    exit;
+        exit;
 
 });
 
@@ -80,9 +80,8 @@ $app->get("/admin/orders", function(){
 
     $page = new PageAdmin();
     $page->setTpl("orders", [
-         "orders"=>Order::listAll()
+         'orders'=>Order::listAll()
     ]);
 });
-
 
 ?>
